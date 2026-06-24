@@ -1,0 +1,4 @@
+[profile default]
+region = cloudgouv-eu-west-1
+endpoint_url = https://oos.cloudgouv-eu-west-1.outscale.com
+

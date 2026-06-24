@@ -1,0 +1,6 @@
+#!/bin/bash
+
+export SFTPGO_SFTPD__BINDINGS__0__PORT=$PORT
+export SFTPGO_LOG_FILE_PATH=""
+exec sftp go
+
