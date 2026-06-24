@@ -1,4 +1,4 @@
-:repo:deb [trusted=yes] ppa:sftpgo/sftpgo
+:repo:deb [trusted=yes] http://ppa.launchpad.net/sftpgo/sftpgo/ubuntu
 gnupg
 sftpgo
 awscli
