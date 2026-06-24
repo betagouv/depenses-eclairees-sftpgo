@@ -1,5 +1,4 @@
-:repo:deb [trusted=yes] http://ppa.launchpad.net/sftpgo/sftpgo/ubuntu
 gnupg
-sftpgo
+https://github.com/drakkan/sftpgo/releases/download/v2.7.3/sftpgo_2.7.3-1_amd64.deb
 awscli
 
