@@ -10,6 +10,14 @@ set -eux
 #apt update
 #apt install -y --no-install-recommends gnupg sftpgo awscli
 
+mkdir -p vendor/sftpgo/etc
+cp -r /etc/sftpgo               vendor/sftpgo/etc/sftpgo
+mkdir -p vendor/sftpgo/srv
+cp -r /srv/sftpgo               vendor/sftpgo/srv/sftpgo
+mkdir -p vendor/sftpgo/var/lib
+cp -r /var/lib/sftpgo           vendor/sftpgo/var/lib/sftpgo
+mkdir -p vendor/sftpgo/usr/share
+cp -r /usr/share/sftpgo         vendor/sftpgo/usr/share
 
 cp -r dist/aws .aws
 

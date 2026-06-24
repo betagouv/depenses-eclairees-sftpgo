@@ -1,7 +1,15 @@
 #!/bin/bash
 
-#export SFTPGO_SFTPD__BINDINGS__0__PORT=$PORT
-export SFTPGO_HTTPD__BINDINGS__0__PORT=$PORT
+export SFTPGO_HTTPD__TEMPLATES_PATH=/app/vendor/sftpgo/usr/share/sftpgo/templates
+export SFTPGO_HTTPD__STATIC_PATH=/app/vendor/sftpgo/usr/share/sftpgo/static
+export SFTPGO_HTTPD__OPENAI_PATH=/app/vendor/sftpgo/usr/share/sftpgo/openai
+export SFTPGO_HTTPD__OPENAI_PATH=/app/vendor/sftpgo/usr/share/sftpgo/openai
 export SFTPGO_LOG_FILE_PATH=""
+
+export SFTPGO_HTTPD__BINDINGS__0__PORT=$PORT
+export SFTPGO_HTTPD__BINDINGS__0__RENDER_OPENAPI=false
+
+#export SFTPGO_SFTPD__BINDINGS__0__PORT=$PORT
+
 exec sftpgo serve
 
