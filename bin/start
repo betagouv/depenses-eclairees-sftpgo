@@ -1,12 +1,15 @@
 #!/bin/bash
 
-export SFTPGO_LOG_FILE_PATH=""
-export SFTPGO_HTTPD__TEMPLATES_PATH="/app/vendor/sftpgo/templates"
-export SFTPGO_HTTPD__STATIC_PATH="/app/vendor/sftpgo/static"
-export SFTPGO_HTTPD__OPENAI_PATH="/app/vendor/sftpgo/openai"
+# Load host keys
+./bin/load_host_keys.sh
 
+# Log on stdout
+export SFTPGO_LOG_FILE_PATH=""
+
+# Disable openapi render
 export SFTPGO_HTTPD__BINDINGS__0__RENDER_OPENAPI="false"
 
+# Bind port
 if [[ "$CONTAINER" == web* ]]; then
     echo "Web container"
     export SFTPGO_HTTPD__BINDINGS__0__PORT="$PORT"
@@ -18,6 +21,5 @@ else
 fi
 
 
-exec /app/vendor/sftpgo/sftpgo serve
-
+exec /app/vendor/sftpgo/sftpgo serve --config-dir /app/vendor/sftpgo --config-file /app/dist/sftpgo.json
 
