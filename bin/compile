@@ -2,13 +2,13 @@
 
 set -eux
 
-add-apt-repository ppa:sftpgo/sftpgo
+#add-apt-repository ppa:sftpgo/sftpgo
 #curl -sS https://oss.sftpgo.com/apt/gpg.key | gpg --dearmor -o /usr/share/keyrings/sftpgo-archive-keyring.gpg
 #CODENAME=`lsb_release -c -s`
 #echo "deb [signed-by=/usr/share/keyrings/sftpgo-archive-keyring.gpg] https://oss.sftpgo.com/apt ${CODENAME} main" | tee /etc/apt/sources.list.d/sftpgo.list
 
-apt update
-apt install -y --no-install-recommends gnupg sftpgo awscli
+#apt update
+#apt install -y --no-install-recommends gnupg sftpgo awscli
 
 
 cp -r dist/aws ~/.aws
