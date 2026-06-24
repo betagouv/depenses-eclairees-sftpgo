@@ -33,5 +33,5 @@ curl -sL https://github.com/drakkan/sftpgo/releases/download/v2.7.3/sftpgo_v2.7.
 #mkdir -p vendor/sftpgo/usr/share
 #cp -r /usr/share/sftpgo         vendor/sftpgo/usr/share
 
-cp -r dist/aws .aws
+#cp -r dist/aws .aws
 
