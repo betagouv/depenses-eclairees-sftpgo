@@ -1,18 +1,18 @@
 #!/bin/bash
 
 export SFTPGO_LOG_FILE_PATH=""
-export SFTPGO_HTTPD__TEMPLATES_PATH=/app/vendor/sftpgo/templates
-export SFTPGO_HTTPD__STATIC_PATH=/app/vendor/sftpgo/static
-export SFTPGO_HTTPD__OPENAI_PATH=/app/vendor/sftpgo/openai
+export SFTPGO_HTTPD__TEMPLATES_PATH="/app/vendor/sftpgo/templates"
+export SFTPGO_HTTPD__STATIC_PATH="/app/vendor/sftpgo/static"
+export SFTPGO_HTTPD__OPENAI_PATH="/app/vendor/sftpgo/openai"
 
-export SFTPGO_HTTPD__BINDINGS__0__RENDER_OPENAPI=false
+export SFTPGO_HTTPD__BINDINGS__0__RENDER_OPENAPI="false"
 
 if [[ "$CONTAINER" == web* ]]; then
     echo "Web container"
-    export SFTPGO_HTTPD__BINDINGS__0__PORT=$PORT
+    export SFTPGO_HTTPD__BINDINGS__0__PORT="$PORT"
 elif [[ "$CONTAINER" == tcp* ]]; then
     echo "TCP container"
-    export SFTPGO_SFTPD__BINDINGS__0__PORT=$PORT
+    export SFTPGO_SFTPD__BINDINGS__0__PORT="$PORT"
 else
     echo "Unknown container '${CONTAINER}'"
 fi
