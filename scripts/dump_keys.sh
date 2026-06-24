@@ -8,10 +8,15 @@ if grep -q '_' host_keys/*; then
 fi
 
 echo -n 'FILE_CONTENT_ID_RSA=' && tr '\n' '_' < host_keys/id_rsa
+echo
 echo -n 'FILE_CONTENT_ID_RSA_PUB=' && tr '\n' '_' < host_keys/id_rsa.pub
+echo
 echo -n 'FILE_CONTENT_ID_ECDSA=' && tr '\n' '_' < host_keys/id_ecdsa
+echo
 echo -n 'FILE_CONTENT_ID_ECDSA_PUB=' && tr '\n' '_' < host_keys/id_ecdsa.pub
+echo
 echo -n 'FILE_CONTENT_ID_ED25519=' && tr '\n' '_' < host_keys/id_ed25519
+echo
 echo -n 'FILE_CONTENT_ID_ED25519_PUB=' && tr '\n' '_' < host_keys/id_ed25519.pub
 echo
 

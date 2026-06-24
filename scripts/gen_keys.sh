@@ -2,7 +2,7 @@
 
 set -eux
 
-rm -r host_keys
+rm -rf host_keys
 mkdir host_keys
 
 ssh-keygen -t rsa -b 4096 -f host_keys/id_rsa -N "" -C ""
