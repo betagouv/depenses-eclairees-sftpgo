@@ -1,2 +1,2 @@
-web: sftpgo serve
+web: ./bin/start
 

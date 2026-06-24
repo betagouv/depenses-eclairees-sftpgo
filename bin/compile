@@ -2,14 +2,24 @@
 
 set -eux
 
+BUILD_DIR="$1"
+cd $BUILD_DIR
+
+
 #add-apt-repository ppa:sftpgo/sftpgo
 #curl -sS https://oss.sftpgo.com/apt/gpg.key | gpg --dearmor -o /usr/share/keyrings/sftpgo-archive-keyring.gpg
 #CODENAME=`lsb_release -c -s`
 #echo "deb [signed-by=/usr/share/keyrings/sftpgo-archive-keyring.gpg] https://oss.sftpgo.com/apt ${CODENAME} main" | tee /etc/apt/sources.list.d/sftpgo.list
-apt update
-apt install -y --no-install-recommends gnupg awscli
-curl -LO https://github.com/drakkan/sftpgo/releases/download/v2.7.3/sftpgo_2.7.3-1_amd64.deb
-apt install -y --no-install-recommends ./sftpgo_2.7.3-1_amd64.deb
+
+mkdir -p ./vendor/sftpgo
+curl -sL https://github.com/drakkan/sftpgo/releases/download/v2.7.3/sftpgo_v2.7.3_linux_x86_64.tar.xz | tar -xJ -C ./vendor/sftpgo
+
+
+
+#apt update
+#apt install -y --no-install-recommends gnupg awscli
+#curl -LO https://github.com/drakkan/sftpgo/releases/download/v2.7.3/sftpgo_2.7.3-1_amd64.deb
+#apt install -y --no-install-recommends ./sftpgo_2.7.3-1_amd64.deb
 
 #apt update
 #apt install -y --no-install-recommends gnupg sftpgo awscli
@@ -20,8 +30,8 @@ apt install -y --no-install-recommends ./sftpgo_2.7.3-1_amd64.deb
 #cp -r /srv/sftpgo               vendor/sftpgo/srv/sftpgo
 #mkdir -p vendor/sftpgo/var/lib
 #cp -r /var/lib/sftpgo           vendor/sftpgo/var/lib/sftpgo
-mkdir -p vendor/sftpgo/usr/share
-cp -r /usr/share/sftpgo         vendor/sftpgo/usr/share
+#mkdir -p vendor/sftpgo/usr/share
+#cp -r /usr/share/sftpgo         vendor/sftpgo/usr/share
 
 cp -r dist/aws .aws
 
