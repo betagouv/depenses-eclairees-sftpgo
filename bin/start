@@ -6,8 +6,9 @@
 # Log on stdout
 export SFTPGO_LOG_FILE_PATH=""
 
-# Disable openapi render
+# Disable rest api
 export SFTPGO_HTTPD__BINDINGS__0__RENDER_OPENAPI="false"
+export SFTPGO_HTTPD__BINDINGS__0__ENABLE_REST_API="false"
 
 # Bind port
 if [[ "$CONTAINER" == web* ]]; then
