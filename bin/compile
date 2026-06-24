@@ -11,5 +11,5 @@ set -eux
 #apt install -y --no-install-recommends gnupg sftpgo awscli
 
 
-cp -r dist/aws ~/.aws
+cp -r dist/aws .aws
 
